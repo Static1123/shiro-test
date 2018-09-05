@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>登录</title>
+</head>
+<body>
+<div class="container">
+    <form class="form-signin" action="/loginDo" method="post">
+        <h2 class="form-signin-heading">登录后台管理系统</h2>
+        <div class="login-wrap">
+            <input type="text" class="form-control" name="username" placeholder="账号"/>
+            <input type="password" class="form-control" name="password" placeholder="密码"/>
+            <label class="form-control_feedback" th:if="${session.message_login_captcha}!=null"
+                   th:text="${session.message_login_captcha}"></label>
+            <div>
+                <button style="margin-top: 10px;" class="btn btn-lg btn-login btn-block" type="submit">登录</button>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>
